@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tasks.css">
+
+    <!--bootstrap css file  -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <title>Tasks</title>
+</head>
+
+<body>
+
+
+    <link rel="stylesheet" href="./tasks.css">
+
+
+    </head>
+
+    <!-- ========================== Start Header Area============================== -->
+    <header class="header_area">
+        <div class="main-menu">
+            <nav class="navbar navbar-expand-lg navbar fixed-top">
+                <div class="container flex-lg-column">
+                    <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div style="color: white; text-align:center;">
+                        <h3 id="currentUserName"></h3>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto flex-lg-column text-lg-center" role="tablist">
+                            <li class="nav-item ">
+                                <a class="nav-link" aria-current="page" href="./tasks.html">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./AddNewTask.html">Add Task</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a style="cursor:pointer;" class="nav-link" id="logout">logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================== End Header Area============================== -->
+
+    <!-- ========================== Start add new task ============================== -->
+    
+
+    <div id="newtask" class="section d-flex justify-content-center">
+        
+        <div class="section-center ">
+            <div class="container" >
+                <div class="row ">
+                    <div class="newtask-form">
+
+                        <form id="tasks-form">
+                            <div class="row" style="display:block;">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label" style="font-size: larger;">Task title </span>
+                                        <input class="form-control" name="title" type="text" required
+                                            placeholder="add task title">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label" style="font-size: larger;">Task description</span>
+                                        <textarea name="description" class="form-control" rows="3"
+                                            placeholder="write a description" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <!-- <h4 style="color: white;">Choose taks priority</h4> -->
+                                    <label for="Critical">
+                                        <input type="radio" id="Critical" value="Critical" name="priority" required>
+                                        <span></span>Critical
+                                    </label>
+                                    <label for="Normal">
+                                        <input type="radio" id="Normal" value="Normal" name="priority" required>
+                                        <span></span>Normal
+                                    </label>
+                                    <label for="low-priority">
+                                        <input type="radio" id="low-priority" value="Low-priority" name="priority" required>
+                                        <span></span>Low priority
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-btn">
+                                        <button type="submit" class="submit-btn">Add Task </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./img/giphy.gif" alt="" width="320px" height="320px" style="margin-top:60px ;">
+
+    </div>
+
+    <!--=================== End add new task ================-->
+
+    <!-- ===================== Start Section for the saved tasks         =========================== -->
+
+    <section class="vh-100" id="div6" style="display:none;">
+        <div class="container py-5 h-100" id="div5">
+            <div class="row d-flex justify-content-center align-items-center h-100" id="div4">
+                <div class="col col-lg-9 col-xl-7" id="div3">
+                    <div class="card rounded-3" id="backg">
+                        <div class="card-body p-4" id="table-section">
+
+                            <h4 class="text-center my-3 pb-3">Tasks list</h4>
+
+                            <div class="mb-4" style="text-align:end;">
+                                <button id="clearCompleted" class="btn btn-danger me-3">Clear Completed</button>
+                                <select id="changePriority">
+                                    <option value="All" selected>All</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="Critical">Critical</option>
+                                    <option value="Low-priority">Low priority</option>
+                                </select>
+                            </div>
+
+                            <table id="tasks-table" class="table mb-4 ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Task title</th>
+                                        <th scope="col">Task description</th>
+                                        <th scope="col">Task priority</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== End Section for the saved tasks         =========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+        <script src="tasks.js"></script>
+    </body>
+
+</html>

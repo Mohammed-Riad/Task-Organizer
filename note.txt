@@ -1,0 +1,26 @@
+# CRUD
+
+
+
+
+C : Create ( Add )
+- send new data
+- save it
+
+
+
+R : Read  ( Get )
+- get all data
+- get data by id
+
+
+
+U : Update
+- send new data
+- send id 
+- save it
+
+
+
+D : Delete
+- send id to delete data
